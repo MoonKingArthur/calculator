@@ -12,11 +12,20 @@
       "4 5 6 multiply equal"
       "1 2 3 subtract equal"
       "on-clear 0 decimal plus equal";
+    width: 500px;
+    margin:0 auto;
+    margin-top: 200px;
+
+}
+
+/* temporary until I style the calculator */
+div > div {
+    border: solid 1px black;
 }
 
 #top-blue {
     grid-area: top-blue;
-    background-color: blue;
+    background-color: grey;
 }
 
 #display-left {
