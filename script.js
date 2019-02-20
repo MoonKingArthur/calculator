@@ -6,3 +6,19 @@ let divide = (num1,num2) => num1 / num2;
 function operate(operator,num1,num2) {
     
 }
+
+const buttons = document.querySelectorAll('button');
+
+calcOn();
+
+function calcOn() {
+    buttons.forEach(button => {
+        button.addEventListener('click', selections)
+    });
+}
+
+function selections(event) {
+    let userSelection = event.target.innerText;
+    console.log(userSelection);
+    // return userSelection;
+}
