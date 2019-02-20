@@ -5,7 +5,13 @@
     /* TODO must fix rows */
     grid-template-areas: 
       "top-blue top-blue top-blue top-blue top-blue"
-      "display-left display display display display-right";
+      "display-left display display display display-right"
+      "name-model name-model name-model name-model name-model"
+      "solar-strip solar-strip solar-strip solar-strip-right solar-strip-right"
+      "7 8 9 divide equal"
+      "4 5 6 multiply equal"
+      "1 2 3 subtract equal"
+      "on-clear 0 decimal plus equal";
 }
 
 #top-blue {
@@ -23,4 +29,84 @@
 
 #display-right {
     grid-area: display-right;
+}
+
+#name-model {
+    grid-area: name-model;
+}
+
+#solar-strip {
+    grid-area: solar-strip;
+}
+
+#solar-strip-right {
+    grid-area: solar-strip-right;
+}
+
+#7 {
+    grid-area: 7;
+}
+
+#8 {
+    grid-area: 8;
+}
+
+#9 {
+    grid-area: 9;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#4 {
+    grid-area: 4;
+}
+
+#5 {
+    grid-area: 5;
+}
+
+#6 {
+    grid-area: 6;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#1 {
+    grid-area: 1;
+}
+
+#2 {
+    grid-area: 2;
+}
+
+#3 {
+    grid-area: 3;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#on-clear {
+    grid-area: on-clear;
+}
+
+#0 {
+    grid-area: 0;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#equal {
+    grid-area: equal;
 }
