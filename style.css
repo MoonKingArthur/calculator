@@ -1,17 +1,17 @@
 .calculator {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    /* TODO must fix rows */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-template-areas: 
-      "top-blue top-blue top-blue top-blue top-blue"
-      "display-left display display display display-right"
-      "name-model name-model name-model name-model name-model"
-      "solar-strip solar-strip solar-strip solar-strip-right solar-strip-right"
-      "7 8 9 divide equal"
-      "4 5 6 multiply equal"
-      "1 2 3 subtract equal"
-      "on-clear 0 decimal plus equal";
+      "top-blue top-blue top-blue top-blue"
+      "display-left display display display-right"
+      "name-model name-model name-model name-model"
+      "solar-strip solar-strip solar-strip-right solar-strip-right"
+      "divide multiply subtract plus"
+      "7 8 9 equal"
+      "4 5 6 equal"
+      "1 2 3 equal"
+      "clear 0 decimal equal";
     width: 500px;
     margin:0 auto;
     margin-top: 200px;
@@ -100,10 +100,6 @@ div > div {
     grid-area: subtract;
 }
 
-#on-clear {
-    grid-area: on-clear;
-}
-
 #0 {
     grid-area: 0;
 }
@@ -118,4 +114,8 @@ div > div {
 
 #equal {
     grid-area: equal;
+}
+
+#clear {
+    grid-area: clear;
 }
