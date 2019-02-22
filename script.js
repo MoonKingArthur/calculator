@@ -35,5 +35,14 @@ function selections(event) {
 
   let userSelection = event.target.innerText;    
   console.log(userSelection);
+
+  display.innerHTML = '';
+  const toDisplay = document.createElement('p');
+  toDisplay.textContent = userSelection;
+  calcDisplay.appendChild(toDisplay);
+
   return userSelection;
+  
+
+
 }
