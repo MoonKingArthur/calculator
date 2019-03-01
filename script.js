@@ -3,18 +3,19 @@ const calcDisplay = document.querySelector("#display")
 let num1 = '';
 let num2 = '';
 let operator = '';
+let currentSelection = '';
 
 calcInit();
 
 function calcInit() {
   buttons.forEach(button => {
     button.addEventListener('click', (event)=>{
-      const currentSelection = event.target.innerText;
+      currentSelection = event.target.innerText;
       console.log(currentSelection);
       varAssignment(currentSelection);
     })
   });
-    operate();
+    
 }
 
 function operate(num1,operator,num2) {
@@ -31,12 +32,11 @@ function operate(num1,operator,num2) {
     // default:
     //   console.log("Sorry, we don't support " + operator + '.');
   }
+  
 }
-// console.log(operate(10,"+",2));
 
 
 function varAssignment(currentSelection) {
-  console.log(currentSelection);
   
   if (currentSelection.match(/\*|-|\+|\//)) {
 		if (num1) {
@@ -48,12 +48,21 @@ function varAssignment(currentSelection) {
 		num1 += currentSelection;
   }
   
-	displayInfo();
+  displayInfo();  
 }
 
 function displayInfo() {
 	calcDisplay.innerHTML = "";
   const info = document.createElement('p');
-	info.innerText = `num1: ${num1} | num2: ${num2} | Operator: ${operator}`;
-	calcDisplay.appendChild(info);
+	info.innerText = `${num1} ${operator} ${num2}`;
+  calcDisplay.appendChild(info);
+
+  if (currentSelection === "=") {
+    calcDisplay.innerHTML = "";
+    const info = document.createElement('p');
+    console.log(operate(num1,operator,num2));
+    
+    // info.innerText = operate(num1,operator,num2);
+    // calcDisplay.appendChild(info);
+  }
 }
