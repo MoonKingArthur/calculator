@@ -1,5 +1,8 @@
 const buttons = document.querySelectorAll('button');
 const calcDisplay = document.querySelector("#display")
+let num1 = '';
+let num2 = '';
+let operator = '';
 
 calcInit();
 
@@ -8,13 +11,10 @@ function calcInit() {
     button.addEventListener('click', (event)=>{
       const currentSelection = event.target.innerText;
       console.log(currentSelection);
-      lastSelectionDisplay(currentSelection); 
-      // varAssignment(currentSelection);
+      varAssignment(currentSelection);
     })
   });
-
     operate();
-
 }
 
 function operate(num1,operator,num2) {
@@ -35,40 +35,25 @@ function operate(num1,operator,num2) {
 // console.log(operate(10,"+",2));
 
 
-function lastSelectionDisplay(currentSelection) {
-    display.innerHTML = '';
-    const toDisplay = document.createElement('p');
-    toDisplay.textContent = currentSelection;
-    calcDisplay.appendChild(toDisplay);
+function varAssignment(currentSelection) {
+  console.log(currentSelection);
+  
+  if (currentSelection.match(/\*|-|\+|\//)) {
+		if (num1) {
+	    operator = currentSelection;
+		}
+	} else if (num1 && operator) {
+		num2 += currentSelection;
+	} else {
+		num1 += currentSelection;
+  }
+  
+	displayInfo();
 }
 
-
-// example from briggs
-// let num1 = '';
-// let num2 = '';
-// let thing = '';
-
-// document.querySelectorAll("button").forEach(element => element.addEventListener('click', buttonHandler));
-
-// function buttonHandler(event) {
-// 	const inputValue = event.target.value;
-//   if (inputValue === 'huh?') {
-// 		if (num1) {
-// 	    thing = inputValue;
-// 		}
-// 	} else if (num1 && thing) {
-// 		num2 += inputValue;
-// 	} else {
-// 		num1 += inputValue;
-// 	}
-
-// 	displayInfo();
-// }
-
-// const display = document.querySelector('.display')
-// function displayInfo() {
-// 	display.innerHTML = ""
-//   const info = document.createElement('p');
-// 	info.innerText = `num1: ${num1} | num2: ${num2} | thing: ${thing}`
-// 	display.appendChild(info);
-// }
+function displayInfo() {
+	calcDisplay.innerHTML = "";
+  const info = document.createElement('p');
+	info.innerText = `num1: ${num1} | num2: ${num2} | Operator: ${operator}`;
+	calcDisplay.appendChild(info);
+}
