@@ -62,7 +62,7 @@ function displayInfo() {
     const info = document.createElement('p');
     console.log(operate(num1,operator,num2));
     
-    // info.innerText = operate(num1,operator,num2);
-    // calcDisplay.appendChild(info);
+    info.innerText = operate(num1,operator,num2);
+    calcDisplay.appendChild(info);
   }
 }
