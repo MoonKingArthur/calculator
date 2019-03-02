@@ -38,28 +38,15 @@ function operate(num1,operator,num2) {
 
 }
 
-
-// function varAssignment(currentSelection) {
-//   console.log(currentSelection);
-  
-  
-//   if (currentSelection.match(/\*|-|\+|\//)) {
-// 		if (num1) {
-// 	    operator = currentSelection;
-// 		}
-//     } else if (num1 && operator) {
-//       num2 += currentSelection;
-//     } else {
-//       num1 += currentSelection;
-//     }
-  
-//   displayInfo();  
-// }
-
 function varAssignment(currentSelection) {
 
   if (currentSelection === "=") {
     return displayInfo();
+  }
+
+  // clears DOM visually but data is still there.
+  if (currentSelection === "C") {
+    return calcDisplay.innerHTML = "";
   }
   
   if (currentSelection.match(/\*|-|\+|\//)) {
