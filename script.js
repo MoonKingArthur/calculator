@@ -19,6 +19,9 @@ function calcInit() {
 }
 
 function operate(num1,operator,num2) {
+  // console.log("outcome of logging operator is: " + operator);
+  // console.log("outcome of logging num2 is: " + num2);
+  // // num2 is returning as num2=
 
   switch (operator) {
     case '/':
@@ -32,23 +35,43 @@ function operate(num1,operator,num2) {
     // default:
     //   console.log("Sorry, we don't support " + operator + '.');
   }
-  
+
 }
 
 
+// function varAssignment(currentSelection) {
+//   console.log(currentSelection);
+  
+  
+//   if (currentSelection.match(/\*|-|\+|\//)) {
+// 		if (num1) {
+// 	    operator = currentSelection;
+// 		}
+//     } else if (num1 && operator) {
+//       num2 += currentSelection;
+//     } else {
+//       num1 += currentSelection;
+//     }
+  
+//   displayInfo();  
+// }
+
 function varAssignment(currentSelection) {
+
+  if (currentSelection === "=") {
+    return displayInfo();
+  }
   
   if (currentSelection.match(/\*|-|\+|\//)) {
 		if (num1) {
 	    operator = currentSelection;
 		}
-	} else if (num1 && operator) {
-		num2 += currentSelection;
-	} else {
-		num1 += currentSelection;
-  }
-  
-  displayInfo();  
+    } else if (num1 && operator) {
+      num2 += currentSelection;
+    } else {
+      num1 += currentSelection;
+    }
+    displayInfo();
 }
 
 function displayInfo() {
@@ -60,9 +83,10 @@ function displayInfo() {
   if (currentSelection === "=") {
     calcDisplay.innerHTML = "";
     const info = document.createElement('p');
-    console.log(operate(num1,operator,num2));
+    // console.log(typeof operate(num1,operator,num2));
     
     info.innerText = operate(num1,operator,num2);
     calcDisplay.appendChild(info);
   }
 }
+
