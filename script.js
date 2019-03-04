@@ -59,6 +59,9 @@ function varAssignment(currentSelection) {
       num1 += currentSelection;
     }
     displayInfo();
+
+    // code from https://lvzbel.github.io/odin_calculator/ could help with continuing if more operators
+    // solution above added all inputs to array. If more than 3 elements, varAssignment can repeat?
 }
 
 function displayInfo() {
