@@ -4,6 +4,7 @@ let num1 = '';
 let num2 = '';
 let operator = '';
 let currentSelection = '';
+let selections = [];
 
 calcInit();
 
@@ -11,6 +12,7 @@ function calcInit() {
   buttons.forEach(button => {
     button.addEventListener('click', (event)=>{
       currentSelection = event.target.innerText;
+      selections.push(currentSelection);
       console.log(currentSelection);
       varAssignment(currentSelection);
     })
@@ -44,7 +46,7 @@ function varAssignment(currentSelection) {
     return displayInfo();
   }
 
-  // clears DOM visually but data is still there.
+  // TODO clears DOM visually but data is still there.
   if (currentSelection === "C") {
     return calcDisplay.innerHTML = "";
   }
@@ -59,9 +61,7 @@ function varAssignment(currentSelection) {
       num1 += currentSelection;
     }
     displayInfo();
-
-    // code from https://lvzbel.github.io/odin_calculator/ could help with continuing if more operators
-    // solution above added all inputs to array. If more than 3 elements, varAssignment can repeat?
+    
 }
 
 function displayInfo() {
