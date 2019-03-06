@@ -45,8 +45,10 @@ function varAssignment(currentSelection) {
     // Re-assignes displayArray with a new array with num1 in the 0 index position
   } 
   else if (currentSelection === "C") {
-    // TODO clears DOM visually but data is still there.
-    return calcDisplay.innerHTML = "";
+    num1 = "";
+    num2 = "";
+    operator = "";
+    // calcDisplay.innerHTML = "";
   } 
   else if (currentSelection.match(/\*|-|\+|\//)) {
     if (num2) {
