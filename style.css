@@ -1,7 +1,9 @@
 .calculator {
     display: grid;
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr); */
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: 5% 1fr 8% 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
       "top-blue top-blue top-blue top-blue"
       "display-left display display display-right"
@@ -19,12 +21,41 @@
 
 }
 
+#solar-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "strip1 strip2 strip3 strip4"
+}
+
+#strip1 {
+    grid-area: strip1;
+}
+
+#strip2 {
+    grid-area: strip2;
+}
+
+#strip3 {
+    grid-area: strip3;
+}
+
+#strip4 {
+    grid-area: strip4;
+}
+
 .button {
     background-color: #F2F4F7;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 .operator {
-    background-color: #D02027
+    background-color: #D02027;
+    color: #F2F4F7;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 /* temporary until I style the calculator */
@@ -56,6 +87,7 @@ div > div {
     grid-area: name-model;
     background-color: #0A548F;
     color: #F2F4F7;
+    font-size: 200%;
 }
 
 #solar-strip {
