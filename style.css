@@ -13,9 +13,18 @@
       "1 2 3 equal"
       "clear 0 decimal equal";
     width: 500px;
+    height: 600px;
     margin:0 auto;
-    margin-top: 200px;
+    margin-top: 100px;
 
+}
+
+.button {
+    background-color: #F2F4F7;
+}
+
+.operator {
+    background-color: #D02027
 }
 
 /* temporary until I style the calculator */
@@ -25,31 +34,38 @@ div > div {
 
 #top-blue {
     grid-area: top-blue;
-    background-color: grey;
+    background-color: #0A548F;
 }
 
 #display-left {
     grid-area: display-left;
+    background-color: #0A548F;
 }
 
 #display {
     grid-area: display;
+    background-color: #B7BABB;
 }
 
 #display-right {
     grid-area: display-right;
+    background-color: #0A548F;
 }
 
 #name-model {
     grid-area: name-model;
+    background-color: #0A548F;
+    color: #F2F4F7;
 }
 
 #solar-strip {
     grid-area: solar-strip;
+    background-color: #171E1C;
 }
 
 #solar-strip-right {
     grid-area: solar-strip-right;
+    background-color: #0A548F;
 }
 
 #7 {
